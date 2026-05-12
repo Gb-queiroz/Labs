@@ -1,0 +1,113 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Seletor de tag */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    color: green;
+    min-height: 100vh;
+}
+
+/* ================= MENU ================= */
+
+/* Seletor de id */
+#menu {
+    background-color: rgb(31, 1, 41);
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+#menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+/* Pseudo-classe */
+#menu a:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* ================= CONTEÚDO ================= */
+
+main {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+/* Seletor de classe */
+.titulo {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #1b5e20;
+}
+
+.texto {
+    font-size: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ================= TABELA ================= */
+
+#tabela-projetos {
+    margin: 40px auto;
+    border-collapse: collapse;
+    width: 70%;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+#tabela-projetos th {
+    background-color: #2e7d32;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+}
+
+#tabela-projetos td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Hover na linha da tabela */
+#tabela-projetos tr:hover {
+    background-color: #e8f5e9;
+    transition: 0.3s;
+}
+
+/* Link da tabela */
+#tabela-projetos a {
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+#tabela-projetos a:hover {
+    color: #1b5e20;
+    text-decoration: underline;
+}
+
+.imagens {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    text-align: center;
+}

@@ -1,0 +1,139 @@
+/* Reset básico */
+
+/* COR DO FUNDO */
+body {
+    margin: 0;
+    background-color: lightgray;
+    font-family: Sans-Serif;
+}
+
+/* topo */
+.topo {
+    background-color: bisque;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border: 3px solid darkblue;
+}
+
+.titulo-principal {
+    color: darkgreen;
+    font-size: 40px;
+}
+
+.logo-esq,
+.logo-dir {
+    height: 120px;
+}
+
+/* MENU */
+.menu {
+    background-color: lightskyblue;
+    text-align: center;
+    padding: 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: darkred;
+    font-weight: bold;
+    margin: 0 30px;
+}
+
+/* CONTEÚDO */
+.conteudo {
+    text-align: center;
+    padding: 30px 100px;
+    font: Sans-Serif;
+    font-size: 20pt;
+}
+
+.conteudo h2 {
+    font-size: 28px;
+}
+
+.conteudo p {
+    color: indigo;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font: Sans-Serif;
+
+}
+
+/* LIVROS */
+.livros {
+    text-align: center;
+    padding: 30px;
+}
+
+.imagens-livros {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+
+.imagens-livros img {
+    height: 200px;
+}
+
+/* VÍDEO E MAPA */
+.midia {
+    text-align: center;
+    padding: 40px;
+}
+
+.videos-mapa {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* CONTATOS */
+.contatos {
+    color: black;
+    text-align: center;
+    padding: 30px;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+    border: 2px dashed red;
+}
+
+td {
+    border: 1px solid red;
+    padding: 10px 20px;
+}
+
+th {
+    color: red;
+    background-color: lightgray;
+    border: 1px solid red;
+    padding: 10px 20px;
+}
+
+/* CONSULTA */
+.consulta {
+    color: black;
+    background-color: yellow;
+    width: 400px;
+    margin: 30px auto;
+    padding: 10px;
+}
+
+a {
+    color: darkred;
+}
+
+/* RODAPÉ */
+.rodape {
+    background-color: bisque;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    font-family: "Comic Sans MS";
+    font-size: 15pt;
+}
