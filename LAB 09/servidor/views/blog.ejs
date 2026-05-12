@@ -1,0 +1,33 @@
+html
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <a href="/cadastrar_post"><button class="btn-criar">Cria Post</button></a>
+
+        <div class="lista-posts">
+            <% listaPosts.forEach(function(post) { %>
+                <div class="card-post">
+                    <h2>
+                        <%= post.titulo %>
+                    </h2>
+                    <p>
+                        <%= post.resumo %>
+                    </p>
+                    <p>
+                        <%= post.conteudo %>
+                    </p>
+                </div>
+                <% }); %>
+        </div>
+    </div>
+</body>
+
+</html>

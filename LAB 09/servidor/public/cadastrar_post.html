@@ -1,0 +1,43 @@
+html
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Post</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <label>Título:</label><br>
+        <input type="text" id="titulo"><br><br>
+
+        <label>Resumo:</label><br>
+        <input type="text" id="resumo"><br><br>
+
+        <label>Conteúdo:</label><br>
+        <input type="text" id="conteudo"><br><br>
+
+        <button onclick="enviarPost()">Enviar</button>
+    </div>
+
+    <script>
+        function enviarPost() {
+            const titulo = document.getElementById('titulo').value;
+            const resumo = document.getElementById('resumo').value;
+            const conteudo = document.getElementById('conteudo').value;
+
+            fetch('/cadastrar_post', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `titulo=${encodeURIComponent(titulo)}&resumo=${encodeURIComponent(resumo)}&conteudo=${encodeURIComponent(conteudo)}`
+            }).then(res => {
+                if (res.redirected) window.location.href = res.url;
+                else return res.text().then(html => document.write(html));
+            });
+        }
+    </script>
+</body>
+
+</html>
