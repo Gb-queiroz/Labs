@@ -1,0 +1,41 @@
+html
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Login</h2>
+
+        <label>Login:</label><br>
+        <input type="text" id="login"><br><br>
+
+        <label>Senha:</label><br>
+        <input type="password" id="senha"><br><br>
+
+        <button onclick="logar()">Entrar</button>
+    </div>
+
+    <script>
+        function logar() {
+            const login = document.getElementById('login').value;
+            const senha = document.getElementById('senha').value;
+
+            fetch('/logar', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `login=${encodeURIComponent(login)}&senha=${encodeURIComponent(senha)}`
+            }).then(res => {
+                if (res.redirected) window.location.href = res.url;
+                else return res.text().then(html => document.write(html));
+            });
+        }
+    </script>
+</body>
+
+</html>
