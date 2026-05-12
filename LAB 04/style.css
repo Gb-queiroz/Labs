@@ -1,0 +1,14 @@
+body {
+    background-color: rgb(95, 21, 95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.bolada {
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+}
