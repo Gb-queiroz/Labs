@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carros Disponíveis</title>
+    <link rel="stylesheet" href="style_carros.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Carros Disponíveis</h1>
+
+        <a href="login.html" class="btn-voltar">Login/Cadastro</a>
+        <a href="/gerencia_carros" class="btn-voltar">Gerência</a>
+        <a href="projetos.html" class="btn-voltar">Voltar</a>
+
+        <% if (carros.length===0) { %>
+            <p style="text-align: center; margin-top: 20px;">Nenhum carro cadastrado.</p>
+            <% } else { %>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th>Ano</th>
+                            <th>Disponível</th>
+                            <th>Status</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% carros.forEach(function(carro) { %>
+                            <tr>
+                                <td>
+                                    <%= carro.marca %>
+                                </td>
+                                <td>
+                                    <%= carro.modelo %>
+                                </td>
+                                <td>
+                                    <%= carro.ano %>
+                                </td>
+                                <td>
+                                    <%= carro.qtde_disponivel %>
+                                </td>
+                                <td>
+                                    <% if (carro.qtde_disponivel> 0) { %>
+                                        <span class="status-disponivel">Disponível</span>
+                                        <% } else { %>
+                                            <span class="status-esgotado">Esgotado</span>
+                                            <% } %>
+                                </td>
+                                <td>
+                                    <% if (carro.qtde_disponivel> 0) { %>
+                                        <form action="/vender_carro" method="POST" style="display: inline;">
+                                            <input type="hidden" name="id" value="<%= carro._id %>">
+                                            <button type="submit" class="btn-action btn-vender">Vender</button>
+                                        </form>
+                                        <% } %>
+                                </td>
+                            </tr>
+                            <% }); %>
+                    </tbody>
+                </table>
+                <% } %>
+    </div>
+</body>
+
+</html>

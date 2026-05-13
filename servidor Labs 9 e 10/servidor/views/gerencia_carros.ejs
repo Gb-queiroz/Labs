@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerência de Carros</title>
+    <link rel="stylesheet" href="style_carros.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>gerenciar carros</h1>
+
+        <a href="cadastrar_carro.html" class="btn-novo">Novo Carro</a>
+        <a href="/carros" class="btn-voltar">Ver Carros</a>
+        <a href="projetos.html" class="btn-voltar">Voltar</a>
+
+        <% if (carros.length===0) { %>
+            <p style="text-align: center; margin-top: 20px;">Nenhum carro cadastrado.</p>
+            <% } else { %>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th>Ano</th>
+                            <th>Disponível</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% carros.forEach(function(carro) { %>
+                            <tr>
+                                <td>
+                                    <%= carro.marca %>
+                                </td>
+                                <td>
+                                    <%= carro.modelo %>
+                                </td>
+                                <td>
+                                    <%= carro.ano %>
+                                </td>
+                                <td>
+                                    <%= carro.qtde_disponivel %>
+                                </td>
+                                <td>
+                                    <form action="/remover_carro" method="POST" style="display: inline;">
+                                        <input type="hidden" name="id" value="<%= carro._id %>">
+                                        <button type="submit" class="btn-action btn-delete"
+                                            onclick="return confirm('Tem certeza?')">Remover</button>
+                                    </form>
+
+                                    <button class="btn-action btn-edit"
+                                        onclick="editarCarro('<%= carro._id %>', '<%= carro.marca %>', '<%= carro.modelo %>', '<%= carro.ano %>', '<%= carro.qtde_disponivel %>')">Editar</button>
+                                </td>
+                            </tr>
+                            <% }); %>
+                    </tbody>
+                </table>
+                <% } %>
+    </div>
+
+    <div id="modal-editar"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000;">
+        <div
+            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 30px; border-radius: 5px; width: 90%; max-width: 500px;">
+            <h2>Editar Carro</h2>
+            <form id="form-editar" action="/atualizar_carro" method="POST" style="margin-top: 20px;">
+                <input type="hidden" id="editar-id" name="id">
+
+                <div class="form-group">
+                    <label for="editar-marca">Marca:</label>
+                    <input type="text" id="editar-marca" name="marca" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="editar-modelo">Modelo:</label>
+                    <input type="text" id="editar-modelo" name="modelo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="editar-ano">Ano:</label>
+                    <input type="number" id="editar-ano" name="ano" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="editar-qtde">Quantidade:</label>
+                    <input type="number" id="editar-qtde" name="qtde_disponivel" required>
+                </div>
+
+                <button type="submit" class="btn-submit">Atualizar</button>
+                <button type="button" class="btn-submit" style="background-color: #999;"
+                    onclick="fecharModal()">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function editarCarro(id, marca, modelo, ano, qtde) {
+            document.getElementById('editar-id').value = id;
+            document.getElementById('editar-marca').value = marca;
+            document.getElementById('editar-modelo').value = modelo;
+            document.getElementById('editar-ano').value = ano;
+            document.getElementById('editar-qtde').value = qtde;
+            document.getElementById('modal-editar').style.display = 'block';
+        }
+
+        function fecharModal() {
+            document.getElementById('modal-editar').style.display = 'none';
+        }
+
+        window.onclick = function (event) {
+            var modal = document.getElementById('modal-editar');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

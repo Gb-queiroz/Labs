@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="style_blog.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Blog</h1>
+
+        <a href="cadastrar_post.html" class="btn-novo">Novo Post</a>
+        <a href="projetos.html" class="btn-voltar">Voltar</a>
+
+        <div class="posts">
+            <% if (posts.length===0) { %>
+                <p class="sem-posts">Nenhum post cadastrado ainda.</p>
+                <% } else { %>
+                    <% posts.forEach(function(post) { %>
+                        <article class="post">
+                            <h2>
+                                <%= post.titulo %>
+                            </h2>
+                            <p class="resumo">
+                                <%= post.resumo %>
+                            </p>
+                            <p class="conteudo">
+                                <%= post.conteudo %>
+                            </p>
+                            <% if (post.data_criacao) { %>
+                                <p class="data">
+                                    <%= post.data_criacao.toLocaleDateString('pt-BR') %>
+                                </p>
+                                <% } %>
+                        </article>
+                        <% }); %>
+                            <% } %>
+        </div>
+    </div>
+</body>
+
+</html>
