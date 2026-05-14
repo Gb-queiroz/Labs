@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav id="menu">
+        <ul>
+            <li><a href="home.html">Início</a></li>
+            <li><a href="desenvolvedores.html">Desenvolvedor</a></li>
+            <li><a href="jogo.html">Jogo</a></li>
+            <li><a href="referencias.html">Referências </a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1 class="titulo">Corra para não ser pego</h1>
+
+        <button onclick="Começar()">Iniciar Jogo</button>
+
+        <p>Pontuação: <span id="pontuação">0</span></p>
+
+        <canvas id="jogoCanvas" width="400" height="500"></canvas>
+
+        <script src="jogo.js"></script>
+    </main>
+
+</body>
+
+</html>
