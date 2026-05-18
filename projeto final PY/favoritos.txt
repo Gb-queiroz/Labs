@@ -1,0 +1,3 @@
+joao|Meus Favoritos|2,5
+maria|Assista Depois|4,5
+queiroz|2|

@@ -1,0 +1,14 @@
+1|Matrix|Ficção científica clássica|Ficção Científica|136|2026-05-15
+2|Interestelar|Exploração do espaço|Ficção Científica|169|2026-05-15
+3|A Origem|Trama com sonhos complexa|Suspense|148|2026-05-15
+4|Vengadores|Heróis salvando o mundo|Ação|180|2026-05-15
+5|Titanic|Amor em navio afundando|Romance|194|2026-05-15
+6|O Iluminado|Horror psicológico|Horror|146|2026-05-15
+7|Pulp Fiction|Histórias entrelaçadas|Drama|154|2026-05-15
+8|Parasita|Thriller social coreano|Suspense|132|2026-05-15
+9|À Procura da Felicidade|Inspirador|Drama|117|2026-05-15
+10|Jurassic Park|Dinossauros e aventura|Ação|127|2026-05-15
+11|O alto da comparecida|dois loco|Comedia|200|2026-05-15
+12|john wick|um homem fazendo vingança|Ação|200|2026-05-15
+13|carros|carros em desenho animado|Animação|200|2026-05-15
+14|batman|rico salvando a cidade dos crimes|Ação|200|2026-05-15

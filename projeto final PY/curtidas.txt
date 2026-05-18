@@ -1,0 +1,8 @@
+joao|1
+joao|2
+maria|1
+maria|4
+maria|5
+pedro|2
+pedro|8
+joao|5
